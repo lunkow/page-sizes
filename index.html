@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Sizes Demo</title>
+</head>
+<body>
+
+    <p>
+        Screen Size: <b><span id="screenSize"></span></b>
+        <br>
+        Viewport Size: <b><span id="screenViewport"></span></b>
+
+    </p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let screenSizeEl = document.getElementById('screenSize');
+            let screenViewportEl = document.getElementById('screenViewport');
+
+            let screenSize = `${window.screen.width}x${window.screen.height}`;
+            let screenViewport = `${window.innerWidth}x${window.innerHeight}`;
+
+            screenSizeEl.innerText = screenSize;
+            screenViewportEl.innerText = screenViewport;
+        })
+    </script>
+</body>
+</html>
