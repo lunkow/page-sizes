@@ -11,19 +11,33 @@
         Screen Size: <b><span id="screenSize"></span></b>
         <br>
         Viewport Size: <b><span id="screenViewport"></span></b>
-
+        <br>
+        Device Pixel Ratio: <b><span id="pixelRatio"></span></b>
+        <br>
+        Physical Screen Size: <b><span id="screenRealSize"></span></b>
+        <br>
+        Physical Viewport Size: <b><span id="screenRealViewport"></span></b>
     </p>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let screenSizeEl = document.getElementById('screenSize');
             let screenViewportEl = document.getElementById('screenViewport');
+            let pixelRatioEl = document.getElementById('pixelRatio');
+            let screenRealSizeEl = document.getElementById('screenRealSize');
+            let screenRealViewportEl = document.getElementById('screenRealViewport');
 
             let screenSize = `${window.screen.width}x${window.screen.height}`;
             let screenViewport = `${window.innerWidth}x${window.innerHeight}`;
+            let pixelRatio = `${window.devicePixelRatio}`;
+            let screenRealSize = `${window.screen.width * pixelRatio}x${window.screen.height * pixelRatio}`;
+            let screenRealViewport = `${window.innerWidth * pixelRatio}x${window.innerHeight * pixelRatio}`;
 
             screenSizeEl.innerText = screenSize;
             screenViewportEl.innerText = screenViewport;
+            pixelRatioEl.innerText = pixelRatio;
+            screenRealSizeEl.innerText = screenRealSize;
+            screenRealViewportEl.innerText = screenRealViewport;
         })
     </script>
 </body>
